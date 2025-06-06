@@ -1,54 +1,72 @@
-# React + TypeScript + Vite
+# Github User Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+App that lets you search for Github users and see their repositories.
 
-Currently, two official plugins are available:
+## Run Locally and Deployment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Make sure **PNPM** is installed on your local machine. You can check by running:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+pnpm -v
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+If it's not installed, please install it first:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install -g pnpm@latest-10
 ```
+
+### Installation
+
+Install dependencies:
+
+```bash
+pnpm install
+```
+
+### Development
+
+Run the development server:
+
+```bash
+pnpm dev
+```
+
+The app will run at `http://localhost:3000`.
+
+### Build Production
+
+To create a production build, run:
+
+```bash
+pnpm build
+```
+
+## Tech Stack & Libraries Used
+
+This project is built with modern tools and libraries to ensure performance, scalability, and a smooth developer experience.
+
+#### React + Vite
+
+We use [**React**](https://reactjs.org/) for building user interfaces and [**Vite**](https://vitejs.dev/) as the development tool. Why? in this project we don't need fancy advanced features like routing or rendering on the server. So in this case, React + Vite is a perfect choice for this simple App.
+
+#### Axios + TanStack Query
+
+For efficient data fetching, i used:
+
+- **[Axios](https://axios-http.com/)**: This is the barebone HTTP client for making API requests.
+- **[TanStack Query](https://tanstack.com/query/v5)**: Axios is ok, but for simplicity we can use Tanstack Query. It manages all states we need when dealing with data fetching. Not only that, we can leverage caching strategy to reduce API calls. We use it to:
+  - Search GitHub users and cache results by keyword.
+  - Fetch user repositories with pagination, while maintaining cache and scroll position.
+
+#### shadcn/ui + Tailwind CSS
+
+We use [**shadcn/ui**](https://ui.shadcn.com/) for accessible and composable UI components built with [Radix UI](https://www.radix-ui.com/) and [Tailwind CSS](https://tailwindcss.com/). This helps us ship polished UI faster without reinventing design systems.
+
+#### Vitest (Unit Testing)
+
+We use [**Vitest**](https://vitest.dev/) as the unit testing framework, as we use vite as the development tool. It's fast, easy to set up, and integrates well with Vite.
+
+#### MSW (Integration Testing)
+
+[**Mock Service Worker (MSW)**](https://mswjs.io/) is used to mock API responses in integration tests. It intercepts actual network requests and returns mock data — perfect for testing async logic and error handling without calling real APIs.
