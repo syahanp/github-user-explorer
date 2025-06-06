@@ -7,6 +7,7 @@ type SpinnerProps = {
 const Spinner: FC<SpinnerProps> = ({ size = 24 }) => {
 	return (
 		<svg
+			data-test-id="test-spinner"
 			className="animate-spin text-blue-500"
 			style={{ width: size, height: size }}
 			xmlns="http://www.w3.org/2000/svg"

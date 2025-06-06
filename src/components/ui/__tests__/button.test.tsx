@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { Button } from "../ui/button";
+import { Button } from "../button";
 import { vi } from "vitest";
 
 describe("Button Component", () => {

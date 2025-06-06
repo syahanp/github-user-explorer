@@ -14,7 +14,9 @@ const App = () => {
 
 			<div className="border-b border-gray-200 my-6" />
 
-			<SearchResultSection searchValue={searchValue} />
+			<Container>
+				<SearchResultSection searchValue={searchValue} />
+			</Container>
 		</>
 	);
 };

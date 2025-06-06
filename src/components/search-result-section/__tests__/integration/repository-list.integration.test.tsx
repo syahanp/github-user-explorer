@@ -24,15 +24,12 @@ describe("UserRepositoryList", () => {
 			</QueryClientProvider>
 		);
 
-		// Loading state appears
 		expect(screen.getByTestId("loading-spinner")).toBeInTheDocument();
 
-		// Wait for first page repos to render
 		await waitFor(() => {
 			expect(screen.getByText("Repo 1")).toBeInTheDocument();
 		});
 
-		// total 8 repos should be rendered
 		for (let i = 1; i <= 8; i++) {
 			expect(screen.getByText(`Repo ${i}`)).toBeInTheDocument();
 		}
@@ -43,12 +40,10 @@ describe("UserRepositoryList", () => {
 			expect(screen.getByText("Repo 9")).toBeInTheDocument();
 		});
 
-		// total 16 repos should be rendered
 		for (let i = 1; i <= 16; i++) {
 			expect(screen.getByText(`Repo ${i}`)).toBeInTheDocument();
 		}
 
-		// load more should hide when there is no more page
 		expect(
 			screen.queryByRole("button", { name: /load more/i })
 		).not.toBeInTheDocument();
@@ -57,7 +52,6 @@ describe("UserRepositoryList", () => {
 	it("shows error UI when the API fails", async () => {
 		const queryClient = createTestClient();
 
-		// override the handler to simulate a server error
 		server.use(
 			http.get("https://api.github.com/users/:username/repos", () => {
 				return new Response(null, { status: 500 });

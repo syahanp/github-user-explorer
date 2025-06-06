@@ -1,7 +1,7 @@
 import api from "@/api";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import type { FC } from "react";
-import UserRepoCard from "./user-repos-card";
+import UserRepoCard from "./user-repo-card";
 import SomethingWentWrong from "@/components/something-went-wrong";
 import Loading from "@/components/loading";
 import { Button } from "@/components/ui/button";

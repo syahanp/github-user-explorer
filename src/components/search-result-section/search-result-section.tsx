@@ -1,5 +1,4 @@
 import { type FC } from "react";
-import Container from "../container";
 import UserCardList from "./user-list";
 
 type Props = {
@@ -7,11 +6,7 @@ type Props = {
 };
 
 const SearchResultSection: FC<Props> = ({ searchValue }) => {
-	return (
-		<Container>
-			<UserCardList searchValue={searchValue} />
-		</Container>
-	);
+	return <UserCardList searchValue={searchValue} />;
 };
 
 export default SearchResultSection;

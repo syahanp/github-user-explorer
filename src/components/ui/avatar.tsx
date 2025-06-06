@@ -9,6 +9,7 @@ type AvatarProps = {
 const Avatar: FC<AvatarProps> = ({ src, alt, size }) => {
 	return (
 		<img
+			data-test-id="test-avatar"
 			decoding="async"
 			loading="lazy"
 			src={src}
