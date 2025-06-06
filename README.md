@@ -2,6 +2,14 @@
 
 App that lets you search for Github users and see their repositories.
 
+Live Preview :
+https://github-user-explorer-three.vercel.app/
+
+## Table of Contents
+
+- [Run Locally and Deployment](#run-locally-and-deployment)
+- [Tech Stack](#tech-stack)
+
 ## Run Locally and Deployment
 
 Make sure **PNPM** is installed on your local machine. You can check by running:
@@ -42,7 +50,7 @@ To create a production build, run:
 pnpm build
 ```
 
-## Tech Stack & Libraries Used
+## Tech Stack
 
 This project is built with modern tools and libraries to ensure performance, scalability, and a smooth developer experience.
 

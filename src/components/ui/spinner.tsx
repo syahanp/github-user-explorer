@@ -4,7 +4,7 @@ type SpinnerProps = {
 	size?: number;
 };
 
-const Spinner: FC<SpinnerProps> = ({ size = 32 }) => {
+const Spinner: FC<SpinnerProps> = ({ size = 38 }) => {
 	return (
 		<svg
 			data-test-id="test-spinner"

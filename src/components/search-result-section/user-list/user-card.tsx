@@ -17,9 +17,9 @@ const UserCard: FC<UserCardProps> = ({ user }) => {
 
 	return (
 		<>
-			<div className="bg-slate-50 rounded border-2 border-slate-50 select-none">
+			<div className="bg-slate-100 rounded border-2 border-slate-100 select-none">
 				<div
-					className="bg-slate-50 z-10 flex justify-between items-center cursor-pointer p-4 sticky top-0"
+					className="bg-slate-100 z-10 flex justify-between items-center cursor-pointer p-4 sticky top-0"
 					onClick={handleClick}
 				>
 					<div className="flex items-center gap-4">

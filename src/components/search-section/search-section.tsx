@@ -31,6 +31,10 @@ const SearchSection: FC<SearchSectionProps> = ({ onEnter }) => {
 			<Button size="lg" onClick={onSubmit} className="w-full">
 				Search
 			</Button>
+
+			<span className="block text-sm text-center text-slate-500 italic">
+				by Aligar Syahan Putra
+			</span>
 		</div>
 	);
 };

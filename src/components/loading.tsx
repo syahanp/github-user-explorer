@@ -4,7 +4,7 @@ const Loading = () => {
 	return (
 		<div
 			data-test-id="loading-spinner"
-			className="flex justify-center items-center w-full h-[200px] bg-white"
+			className="flex justify-center items-center w-full h-[160px] bg-white"
 		>
 			<Spinner />
 		</div>
