@@ -10,15 +10,16 @@ export const SearchBar: FC<SearchBarProps> = (props) => {
 				<div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
 					<Search
 						data-test-id="lucide-search-icon"
-						className="w-5 h-5 text-gray-500"
+						className="w-5 h-5 text-slate-500"
 					/>
 				</div>
 
 				<input
 					{...props}
+					data-test-id="search-input"
 					type="text"
-					placeholder="Search..."
-					className="w-full border border-gray-300 rounded-lg py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+					placeholder="search users..."
+					className="transition-all w-full text-lg border border-slate-300 rounded py-3 px-8 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
 				/>
 			</div>
 		</div>

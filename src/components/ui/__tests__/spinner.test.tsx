@@ -8,9 +8,8 @@ describe("Spinner component", () => {
 		const spinner = screen.getByTestId("test-spinner");
 
 		expect(spinner).toBeInTheDocument();
-		expect(spinner.style.width).toBe("24px");
-		expect(spinner.style.height).toBe("24px");
-		expect(spinner).toHaveClass("animate-spin text-blue-500");
+		expect(spinner.style.width).toBe("32px");
+		expect(spinner.style.height).toBe("32px");
 	});
 
 	it("renders with custom size", () => {

@@ -11,7 +11,7 @@ const UserRepoCard: FC<UserRepoCardProps> = ({
 }) => {
 	return (
 		<div className="relative p-3 border border-slate-200 rounded space-y-1">
-			<div className="font-medium">{name}</div>
+			<div className="font-medium max-w-[85%] truncate">{name}</div>
 			<div className="text-slate-600 text-sm">{description}</div>
 
 			<div className="absolute top-4 right-3 text-slate-400 text-sm">

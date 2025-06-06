@@ -5,7 +5,7 @@ import { vi } from "vitest";
 describe("SearchBar", () => {
 	it("renders with placeholder", () => {
 		render(<SearchBar placeholder="Search..." />);
-		const input = screen.getByPlaceholderText("Search...");
+		const input = screen.getByTestId("search-input");
 
 		expect(input).toBeInTheDocument();
 	});

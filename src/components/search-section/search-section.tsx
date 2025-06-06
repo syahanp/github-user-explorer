@@ -24,6 +24,9 @@ const SearchSection: FC<SearchSectionProps> = ({ onEnter }) => {
 
 	return (
 		<div className="space-y-4 pt-6">
+			<h1 className="text-4xl font-bold text-center pb-2">
+				Github User Explorer
+			</h1>
 			<SearchBar onChange={handleOnChange} onKeyDown={handleOnEnter} />
 			<Button size="lg" onClick={onSubmit} className="w-full">
 				Search

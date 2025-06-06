@@ -51,7 +51,7 @@ const UserRepositoryList: FC<UserRepositoryListProps> = ({ username }) => {
 
 			{isFetchingNextPage && (
 				<div className="flex justify-center">
-					<Spinner />
+					<Spinner size={28} />
 				</div>
 			)}
 
